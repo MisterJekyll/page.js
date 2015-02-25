@@ -30,7 +30,9 @@
             ctx.data = {};
             ctx.partials = {};
             if (ctx.init) {
-                next();
+                var tp = ctx.path;
+                tp = tp.split("?")[0];
+                if (tp!=='/') next();
             } else {
                 $('#content').addClass('transition');
                 setTimeout(function(){
