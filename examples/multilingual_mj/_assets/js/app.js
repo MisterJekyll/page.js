@@ -19,6 +19,18 @@
         });
     }
 
+    function createCookie(name, value, days) {
+        var expires;
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toGMTString();
+        } else {
+            expires = "";
+        }
+        document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
+    }
+
     function t(label) {
         if (text) {
             if (label=='') return text;
@@ -59,6 +71,8 @@
             tp = tp.split("?")[0];
             if (tp=='/') tp = '/home';
             ctx.data.index = tp;
+
+            createCookie('lang', lang, 365);
 
             var tt = t('');
             if (tt['lang']==lang) {

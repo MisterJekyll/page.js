@@ -4,7 +4,17 @@
     <title>Page.js - Multilingual MJ</title>
     <link rel="stylesheet" href="/_assets/css/style.css" />
       <script>
-          window.location.href='/en';
+        var lcookie = null;
+        var nameEQ = encodeURIComponent('lang') + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) lcookie = decodeURIComponent(c.substring(nameEQ.length, c.length));
+        }
+        if (lcookie!==null) {
+            window.location.href='/'+lcookie;
+        }
       </script>
   </head>
   <body>
