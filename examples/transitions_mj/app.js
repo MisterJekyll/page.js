@@ -46,12 +46,13 @@
             var tp = ctx.path;
             tp = tp.split("?")[0];
             if (tp=='/') tp = '/home';
-            get('views'+tp+'.html', function(html) {
+            ctx.data.index = tp;
+            get('/views'+tp+'.html', function(html) {
                 view(html, ctx.data, ctx.partials);
             });
         },
         error: function(ctx, next) {
-            get('views/404.html', function(html) {
+            get('/views/404.html', function(html) {
                 view(html, ctx.data, ctx.partials);
             });
         }
