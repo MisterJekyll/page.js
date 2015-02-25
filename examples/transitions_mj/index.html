@@ -2,20 +2,22 @@
 <html>
   <head>
     <title>Page.js - transitions MJ</title>
-    <script src="/page.js"></script>
+
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/hogan.js/2.0.0/hogan.js" type="text/javascript" charset="utf-8"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+      <script src="/page.js"></script>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <section id="content">
-      <img src="/logo.png" id="logo" />
-
-      <p id="page"></p>
-
+  <header>
       <nav>
-        <a href="/">home</a>
-        <a href="/contact">contact</a>
-        <a href="/about">about</a>
+          <a href="/">home</a>
+          <!--a href="/contact">contact</a-->
+          <a href="/about">about</a>
       </nav>
+  </header>
+    <section id="content">
     </section>
     <script src="/app.js"></script>
   </body>

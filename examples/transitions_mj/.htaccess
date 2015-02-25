@@ -1,8 +1,14 @@
 Options -Indexes
 Options +FollowSymLinks
+
+ErrorDocument 404 /index.html
+
 RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond $1 !^(index\.php|form\.php|js|style|ckeditor|ckfinder|css|script|img|images|robots\.txt)
 RewriteRule ^(about|contact)?$ index.html?/$1 [L]
-ErrorDocument 404 /index.html

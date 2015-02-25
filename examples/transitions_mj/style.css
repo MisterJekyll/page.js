@@ -29,8 +29,8 @@ body {
 
 nav {
   position: absolute;
-  bottom: -26px;
-  left: 0;
+  top: 26px;
+  left: 26px;
 }
 
 nav a {
